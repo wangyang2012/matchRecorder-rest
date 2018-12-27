@@ -92,3 +92,7 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2018-12-23  4:16:03
+
+ALTER TABLE `match_recorder`.`matches`
+ADD COLUMN `player_1_abandon` TINYINT NULL AFTER `sub_score_2_5`,
+ADD COLUMN `player_2_abandon` TINYINT NULL AFTER `player_1_abandon`;

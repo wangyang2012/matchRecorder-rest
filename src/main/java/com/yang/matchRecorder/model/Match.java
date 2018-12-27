@@ -54,6 +54,12 @@ public class Match {
     @Column(name="sub_score_2_5")
     private Integer subScore25;
 
+    @Column(name="player_1_abandon")
+    private Boolean player1Abandon;
+
+    @Column(name="player_2_abandon")
+    private Boolean player2Abandon;
+
     public Integer getId() {
         return id;
     }
@@ -172,5 +178,21 @@ public class Match {
 
     public void setSubScore25(Integer subScore25) {
         this.subScore25 = subScore25;
+    }
+
+    public Boolean getPlayer1Abandon() {
+        return player1Abandon;
+    }
+
+    public void setPlayer1Abandon(Boolean player1Abandon) {
+        this.player1Abandon = player1Abandon;
+    }
+
+    public Boolean getPlayer2Abandon() {
+        return player2Abandon;
+    }
+
+    public void setPlayer2Abandon(Boolean player2Abandon) {
+        this.player2Abandon = player2Abandon;
     }
 }

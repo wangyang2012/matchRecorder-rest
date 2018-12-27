@@ -23,4 +23,15 @@ public class PlayerServiceImpl implements PlayerService {
     public Player addPlayer(Player player) {
         return playerRepository.save(player);
     }
+
+    /**
+     * if win => 3, if loose => 1, if abandon => 0
+     * @param player
+     * @return
+     */
+    private Integer calculScore(Player player) {
+        // match.findByPlayer1OrPlayer2(player)
+        // if win => 3, if loose => 1, if abandon => 0
+        return null;
+    }
 }

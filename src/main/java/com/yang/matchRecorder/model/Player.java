@@ -13,6 +13,9 @@ public class Player {
     @Column(name="name")
     private String name;
 
+    @Transient
+    private Integer score;
+
     public Integer getId() {
         return id;
     }
@@ -27,5 +30,13 @@ public class Player {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Integer getScore() {
+        return score;
+    }
+
+    public void setScore(Integer score) {
+        this.score = score;
     }
 }
