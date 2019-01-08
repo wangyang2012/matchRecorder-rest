@@ -1,6 +1,8 @@
 package com.yang.matchRecorder.model;
 
 import javax.persistence.*;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 @Entity
@@ -62,7 +64,7 @@ public class Match {
     private Boolean player2Abandon;
 
     @Column(name="match_date_time")
-    private Date matchDateTime;
+    private LocalDate  matchDateTime;
 
     public Integer getId() {
         return id;
@@ -200,11 +202,15 @@ public class Match {
         this.player2Abandon = player2Abandon;
     }
 
-    public Date getMatchDateTime() {
+    public LocalDate getMatchDateTime() {
         return matchDateTime;
     }
 
-    public void setMatchDateTime(Date matchDateTime) {
+    public String getMatchDateTimeStr() {
+        return matchDateTime.format(DateTimeFormatter.ISO_DATE);
+    }
+    
+    public void setMatchDateTime(LocalDate  matchDateTime) {
         this.matchDateTime = matchDateTime;
     }
 }
