@@ -15,7 +15,12 @@ public class PlayerResource {
 
     @GetMapping(value="/")
     public Iterable<Player> getList() {
-        return playerService.findAll();
+        return playerService.findAllAndSortByScore();
+    }
+
+    @GetMapping(value="/{idPlayer}/toFight")
+    public Iterable<Player> getListToFight(@PathVariable Integer idPlayer) {
+        return playerService.getListToFight(idPlayer);
     }
 
     @PutMapping(value="/")
@@ -23,6 +28,11 @@ public class PlayerResource {
         Player playerObj = new Player();
         playerObj.setName(player);
         return playerService.addPlayer(playerObj);
+    }
+
+    @GetMapping("/{idPlayer}")
+    public Player getPlayer(@PathVariable Integer idPlayer) {
+        return playerService.getPlayer(idPlayer);
     }
 
 }

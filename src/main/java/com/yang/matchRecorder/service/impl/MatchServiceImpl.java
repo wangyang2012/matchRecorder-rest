@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.time.LocalDate;
 
 @Service("matchService")
 @Transactional
@@ -22,6 +23,12 @@ public class MatchServiceImpl implements MatchService {
 
     @Override
     public void createMatchScore(Match match) {
+        match.setMatchDateTime(LocalDate.now());
         matchRepository.save(match);
+    }
+
+    @Override
+    public Match getMatch(Integer idMatch) {
+        return matchRepository.findById(idMatch).get();
     }
 }

@@ -6,4 +6,6 @@ public interface MatchService {
     Iterable<Match> findAll();
 
     void createMatchScore(Match match);
+
+    Match getMatch(Integer idMatch);
 }

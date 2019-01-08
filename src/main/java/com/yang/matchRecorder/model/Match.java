@@ -3,7 +3,6 @@ package com.yang.matchRecorder.model;
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
 
 @Entity
 @Table(name="matches")
@@ -206,6 +205,7 @@ public class Match {
         return matchDateTime;
     }
 
+    @Transient
     public String getMatchDateTimeStr() {
         return matchDateTime.format(DateTimeFormatter.ISO_DATE);
     }

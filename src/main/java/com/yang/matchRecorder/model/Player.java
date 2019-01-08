@@ -16,6 +16,12 @@ public class Player {
     @Transient
     private Integer score;
 
+    @Transient
+    private Integer nbWin;
+
+    @Transient
+    private Integer nbLose;
+
     public Integer getId() {
         return id;
     }
@@ -38,5 +44,21 @@ public class Player {
 
     public void setScore(Integer score) {
         this.score = score;
+    }
+
+    public Integer getNbWin() {
+        return nbWin;
+    }
+
+    public void setNbWin(Integer nbWin) {
+        this.nbWin = nbWin;
+    }
+
+    public Integer getNbLose() {
+        return nbLose;
+    }
+
+    public void setNbLose(Integer nbLose) {
+        this.nbLose = nbLose;
     }
 }
