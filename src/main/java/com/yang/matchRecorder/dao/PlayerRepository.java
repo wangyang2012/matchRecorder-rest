@@ -7,6 +7,6 @@ import org.springframework.data.repository.query.Param;
 
 public interface PlayerRepository extends JpaRepository<Player, Integer> {
 
-    @Query(value = "select * from player where id != :idPlayer and id not in (select player_1 from matches where player_2 = :idPlayer) and id not in (select player_1 from matches where player_2 = :idPlayer)", nativeQuery = true)
+    @Query(value = "select * from player where id != :idPlayer and id not in (select player_1 from matches where player_2 = :idPlayer) and id not in (select player_2 from matches where player_1 = :idPlayer)", nativeQuery = true)
     Iterable<Player> findPlayersToFight(@Param("idPlayer") Integer idPlayer1, @Param("idPlayer") Integer idPlayer2, @Param("idPlayer") Integer idPlayer3);
 }

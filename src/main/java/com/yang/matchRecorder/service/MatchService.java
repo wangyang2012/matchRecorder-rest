@@ -8,4 +8,6 @@ public interface MatchService {
     void createMatchScore(Match match);
 
     Match getMatch(Integer idMatch);
+
+    Iterable<Match> findByPlayer(Integer playerId);
 }

@@ -31,4 +31,9 @@ public class MatchServiceImpl implements MatchService {
     public Match getMatch(Integer idMatch) {
         return matchRepository.findById(idMatch).get();
     }
+
+    @Override
+    public Iterable<Match> findByPlayer(Integer playerId) {
+        return matchRepository.findByPlayer1IdOrPlayer2Id(playerId, playerId);
+    }
 }

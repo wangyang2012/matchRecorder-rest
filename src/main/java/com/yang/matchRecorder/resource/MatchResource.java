@@ -17,6 +17,11 @@ public class MatchResource {
         return matchService.findAll();
     }
 
+    @GetMapping("/{idPlayer}/player")
+    public Iterable<Match> getListOfPlayer(@PathVariable Integer idPlayer) {
+        return matchService.findByPlayer(idPlayer);
+    }
+
     @GetMapping("/{idMatch}")
     public Match getMatch(@PathVariable Integer idMatch) {
         return matchService.getMatch(idMatch);
